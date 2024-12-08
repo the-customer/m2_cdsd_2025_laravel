@@ -7,7 +7,7 @@
             @foreach ($articles as $article)
                 <div class="col-lg-4">
                     <div class="card bg-light rounded-4 shadow border-0">
-                        <a href="{{ route('articles.show',$article->id) }}">
+                        <a href="{{ route('articles.show',$article->slug) }}">
                             @if (!$article->image)
                                 <img src="{{ env('ARTICLE_DEFAULT_IMAGE') }}" class="card-img-top">
                             @else
