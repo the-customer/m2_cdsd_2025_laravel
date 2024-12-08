@@ -29,7 +29,8 @@ class ArticleFactory extends Factory
         return [
             'title'         => $title,
             'slug'          => $slug,
-            'category_id'   =>$this->faker->numberBetween(1,8),
+            'likes'         => $this->faker->numberBetween(0,10000),
+            'category_id'   => $this->faker->numberBetween(1,8),
             'views'         => $this->faker->numberBetween(0,1500),
             'content'       => $this->faker->paragraphs(rand(2,25),true),
             'is_published'  => random_int(0,1)."",

@@ -1,3 +1,4 @@
+@if (count($related_articles)>0)
 <div class="row py-4">
     <h4>Related Articles</h4>
     @foreach ($related_articles as $article)
@@ -28,3 +29,5 @@
         </div>
     @endforeach
 </div>
+@endif
+

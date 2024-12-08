@@ -11,12 +11,18 @@ class ArticleController extends Controller
 {
     public function show($slug)
     {
-        // Recuperer l'article dont l'id egale $id:
-        // $art = Article::where('slug', $slug)->first();
-        // if(!$art){
-        //     abort(404);
-        // }
+        //Increment the number of views
+
+
         $article = Article::with('category')->where('slug', $slug)->firstOrFail();
+
+        // $views = $article->views;
+        // $views += 1;
+        // $article->views = $views;
+        // $article->save();
+
+        $article->increment('views');
+        // dd($article->views);
 
         $archives = Article::select(DB::raw('MONTH(published_at) as month, YEAR(published_at) as year'))
         ->groupBy('month','year')

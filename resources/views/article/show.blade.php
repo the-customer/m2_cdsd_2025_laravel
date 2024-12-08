@@ -40,6 +40,14 @@
                             <img src="{{ $article->image }}" width="50%" class="card-img-top">
                         @endif
                     </p>
+                    <p class="d-flex justify-content-end">
+                        <span class="badge text-bg-secondary mx-2">
+                            100 <i class="fa-solid fa-comment"></i>
+                        </span>
+                        <span class="badge text-bg-danger">
+                            {{ $article->likes }} <i class="fa-solid fa-heart"></i>
+                        </span>
+                    </p>
                     {!! nl2br($article->content) !!}
 
                 </article>

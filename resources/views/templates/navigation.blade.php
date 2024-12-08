@@ -1,7 +1,7 @@
 <header class="p-3 mb-3 border-bottom sticky-top bg-white">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a class="navbar-brand" href="...">{{ config('app.name') }}</a>
+            <a class="navbar-brand" href="{{ route('home.index') }}">{{ config('app.name') }}</a>
 
             <ul class="nav col-12 col-lg-auto mx-3 me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li>
