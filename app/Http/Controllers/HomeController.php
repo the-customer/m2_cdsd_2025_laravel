@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,8 +13,11 @@ class HomeController extends Controller
         // recuperer les articles la BD
         // $articles = \DB::table('articles')->get();
         $articles = Article::all();
+        $categories = Category::orderBy('name')->get();
         $data = [
-            'articles' => $articles
+            'articles' => $articles,
+            'page_title' => 'Home',
+            'categories' => $categories
         ];
         return view('home.index',$data);
     }

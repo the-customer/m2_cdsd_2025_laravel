@@ -23,7 +23,7 @@
                         {{ $article->views }} <i class="fa-solid fa-eye"></i>
                     </span>
                     <span class="badge text-bg-warning">
-                        <i class="fa fa-tag"></i> Sport
+                        <i class="fa fa-tag"></i> {{ $article->category->name }}
                     </span>
 
 
@@ -43,8 +43,7 @@
                     {!! nl2br($article->content) !!}
 
                 </article>
-
-
+                @include('article.related_articles')
             </div>
 
             <div class="col-lg-4">

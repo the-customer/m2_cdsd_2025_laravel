@@ -1,12 +1,12 @@
 <header class="p-3 mb-3 border-bottom sticky-top bg-white">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a class="navbar-brand" href="...">...</a>
+            <a class="navbar-brand" href="...">{{ config('app.name') }}</a>
 
             <ul class="nav col-12 col-lg-auto mx-3 me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li>
                     <a class="nav-link ... px-2"
-                        href="...">Home</a>
+                        href="{{ route('home.index') }}">Home</a>
                 </li>
                 <li>
                     <a class="nav-link ... px-2"
@@ -18,14 +18,14 @@
                         Category
                     </a>
                     <ul class="dropdown-menu">
-
+                        @foreach ($categories as $category)
                             <li>
-                                <a class="dropdown-item {{ 1 == 1 ? 'link-primary' : 'link-secondary' }}"
+                                <a class="dropdown-item {{ 1 == 2 ? 'link-primary' : 'link-secondary' }}"
                                     href="#">
-                                   categorie
+                                   {{ $category->name }}
                                 </a>
                             </li>
-
+                        @endforeach
                     </ul>
                 </li>
 

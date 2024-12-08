@@ -5,7 +5,7 @@
             <div class="card mb-3 border-0" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <a href="{{ route('articles.show',$article->id) }}">
+                        <a href="{{ route('articles.show',$article->slug) }}">
                             @if (!$article->image)
                                 <img src="{{ env('ARTICLE_DEFAULT_IMAGE') }}"
                                 class="card-img-top">
